@@ -1,34 +1,25 @@
-public class Main {
-    public static void main(String[] args) {
-        // Create an object of Calculator
-        Calculator calc = new Calculator();
+public class Calculator {
 
-        // Call add method
-        int sum = calc.add(15, 10);
-        System.out.println("Addition of 15 and 10: " + sum);
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
 
-        // Call subtract method
-        int difference = calc.subtract(15, 10);
-        System.out.println("Subtraction of 10 from 15: " + difference);
+    // Method to subtract two integers
+    public int subtract(int a, int b) {
+        return a - b;
+    }
 
-        // Call multiply method
-        int product = calc.multiply(15, 10);
-        System.out.println("Multiplication of 15 and 10: " + product);
+    // Method to multiply two integers
+    public int multiply(int a, int b) {
+        return a * b;
+    }
 
-        // Call divide method with valid input
-        try {
-            int quotient = calc.divide(15, 10);
-            System.out.println("Division of 15 by 10: " + quotient);
-        } catch (ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
+    // Method to divide two integers with exception handling for division by zero
+    public int divide(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero is not allowed.");
         }
-
-        // Call divide method with division by zero
-        try {
-            int quotientZero = calc.divide(15, 0);
-            System.out.println("Division of 15 by 0: " + quotientZero);
-        } catch (ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+        return a / b;
     }
 }
