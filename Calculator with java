@@ -1,0 +1,34 @@
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of Calculator
+        Calculator calc = new Calculator();
+
+        // Call add method
+        int sum = calc.add(15, 10);
+        System.out.println("Addition of 15 and 10: " + sum);
+
+        // Call subtract method
+        int difference = calc.subtract(15, 10);
+        System.out.println("Subtraction of 10 from 15: " + difference);
+
+        // Call multiply method
+        int product = calc.multiply(15, 10);
+        System.out.println("Multiplication of 15 and 10: " + product);
+
+        // Call divide method with valid input
+        try {
+            int quotient = calc.divide(15, 10);
+            System.out.println("Division of 15 by 10: " + quotient);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        // Call divide method with division by zero
+        try {
+            int quotientZero = calc.divide(15, 0);
+            System.out.println("Division of 15 by 0: " + quotientZero);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
